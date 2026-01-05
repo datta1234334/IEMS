@@ -19,7 +19,7 @@ def create_structure():
         "data"
     ]
     
-    print("\n📁 Creating directories...")
+    print("\n Creating directories...")
     for directory in directories:
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -75,10 +75,10 @@ def validate_password(password, min_length=6):
         print(f"   ✓ Created: {validators_path}")
     
     print("\n" + "="*70)
-    print("✅ PROJECT STRUCTURE CREATED SUCCESSFULLY!")
+    print(" PROJECT STRUCTURE CREATED SUCCESSFULLY!")
     print("="*70)
     
-    print("\n📋 Current Structure:")
+    print("\n Current Structure:")
     print("""
 IEMS_Project/
 │
@@ -102,11 +102,12 @@ IEMS_Project/
 └── README.md (copy your documentation here)
     """)
     
-    print("\n🎯 NEXT STEPS:")
+    print("\n NEXT STEPS:")
     print("   1. Copy all your Python code files to their respective locations")
     print("   2. Run: python setup.py")
     print("   3. Run: python main.py")
     print("\n" + "="*70)
 
 if __name__ == "__main__":
+
     create_structure()
