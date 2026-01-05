@@ -1,0 +1,2 @@
+# No external dependencies required
+# Pure Python implementation using standard library only
