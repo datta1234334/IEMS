@@ -58,7 +58,7 @@ class AuthSystem:
     def register_user(self, current_user: dict) -> bool:
         """Register new user (Staff only)"""
         if current_user.get('role') != 'staff':
-            input("\n❌ Only staff can register new users! Press Enter...")
+            input("\n Only staff can register new users! Press Enter...")
             return False
         
         print("\n" + "="*50)
@@ -70,7 +70,7 @@ class AuthSystem:
         role = input("Enter role (student/teacher/staff): ").strip().lower()
         
         if role not in ['student', 'teacher', 'staff']:
-            input("\n⚠️  Invalid role! Press Enter to continue...")
+            input("\n  Invalid role! Press Enter to continue...")
             return False
         
         # Auto-generate user ID based on role
@@ -98,7 +98,7 @@ class AuthSystem:
         elif role == 'staff':
             self._create_staff_record(user_id, username, email)
         
-        print(f"\n✅ User created successfully!")
+        print(f"\n User created successfully!")
         print(f"User ID: {user_id}")
         print(f"Temporary Password: {temp_password}")
         input("\nPress Enter to continue...")
@@ -164,14 +164,14 @@ class AuthSystem:
     def reset_password(self, current_user: dict):
         """Reset password for any user (Staff only)"""
         if current_user.get('role') != 'staff':
-            input("\n❌ Only staff can reset passwords! Press Enter...")
+            input("\n Only staff can reset passwords! Press Enter...")
             return
         
         target_user_id = input("Enter User ID to reset: ").strip().upper()
         
         users_data = self._load_users()
         if target_user_id not in users_data['users']:
-            input("\n⚠️  User not found! Press Enter...")
+            input("\n  User not found! Press Enter...")
             return
         
         username = users_data['users'][target_user_id]['username']
@@ -180,6 +180,7 @@ class AuthSystem:
         users_data['users'][target_user_id]['password_hash'] = self._hash_password(new_password)
         self._save_users(users_data)
         
-        print(f"\n✅ Password reset for {username}!")
+        print(f"\n Password reset for {username}!")
         print(f"New password: {new_password}")
         input("\nPress Enter to continue...")
+
