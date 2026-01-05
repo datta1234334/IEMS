@@ -24,7 +24,7 @@ def pause():
 def print_table(headers, rows):
     """Print data in a formatted table"""
     if not rows:
-        print("\n⚠️ No data to display")
+        print("\n No data to display")
         return
     
     # Calculate column widths
@@ -64,7 +64,7 @@ def get_input(prompt, validation_func=None, error_msg="Invalid input"):
         if not validation_func or validation_func(value):
             return value
         
-        print(f"\n❌ {error_msg}")
+        print(f"\n {error_msg}")
 
 def confirm_action(message):
     """Ask user to confirm an action"""
@@ -73,16 +73,17 @@ def confirm_action(message):
 
 def print_success(message):
     """Print success message"""
-    print(f"\n✅ {message}")
+    print(f"\n {message}")
 
 def print_error(message):
     """Print error message"""
-    print(f"\n❌ {message}")
+    print(f"\n {message}")
 
 def print_warning(message):
     """Print warning message"""
-    print(f"\n⚠️ {message}")
+    print(f"\n {message}")
 
 def print_info(message):
     """Print info message"""
-    print(f"\nℹ️ {message}")
+
+    print(f"\n {message}")
