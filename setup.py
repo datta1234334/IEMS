@@ -20,14 +20,14 @@ def setup_system():
     # Ensure data directory exists
     if not os.path.exists("data"):
         os.makedirs("data")
-        print("\n✅ Created data directory")
+        print("\n Created data directory")
     
     # Initialize system data
-    print("\n🔧 Initializing system...")
+    print("\n Initializing system...")
     DataManager.initialize_system()
     
     # Create sample students
-    print("\n👥 Creating sample students...")
+    print("\n Creating sample students...")
     students = DataManager.read_data("students.txt")
     if len(students) < 3:
         sample_students = [
@@ -63,11 +63,11 @@ def setup_system():
         for student in sample_students:
             DataManager.add_record("students.txt", student)
         
-        print("✅ Sample students created")
+        print(" Sample students created")
         print("   Login with: STU001, STU002, STU003 (password: student123)")
     
     # Create sample teachers
-    print("\n👨‍🏫 Creating sample teachers...")
+    print("\n Creating sample teachers...")
     teachers = DataManager.read_data("teachers.txt")
     if len(teachers) < 2:
         sample_teachers = [
@@ -94,11 +94,11 @@ def setup_system():
         for teacher in sample_teachers:
             DataManager.add_record("teachers.txt", teacher)
         
-        print("✅ Sample teachers created")
+        print(" Sample teachers created")
         print("   Login with: TCH001, TCH002 (password: teacher123)")
     
     # Assign teachers to courses
-    print("\n📚 Assigning teachers to courses...")
+    print("\n Assigning teachers to courses...")
     courses = DataManager.read_data("courses.txt")
     if courses and any(not c.get('teacher_id') for c in courses):
         teachers = DataManager.read_data("teachers.txt")
@@ -107,10 +107,10 @@ def setup_system():
                 course['teacher_id'] = teachers[i % len(teachers)]['id']
         
         DataManager.write_data("courses.txt", courses)
-        print("✅ Teachers assigned to courses")
+        print(" Teachers assigned to courses")
     
     # Create sample enrollments
-    print("\n📖 Creating sample enrollments...")
+    print("\n Creating sample enrollments...")
     enrollments = DataManager.read_data("enrollments.txt")
     if not enrollments:
         sample_enrollments = [
@@ -124,10 +124,10 @@ def setup_system():
         for enrollment in sample_enrollments:
             DataManager.add_record("enrollments.txt", enrollment)
         
-        print("✅ Sample enrollments created")
+        print(" Sample enrollments created")
     
     # Create sample grades
-    print("\n📊 Creating sample grades...")
+    print("\n Creating sample grades...")
     grades = DataManager.read_data("grades.txt")
     if not grades:
         sample_grades = [
@@ -138,10 +138,10 @@ def setup_system():
         for grade in sample_grades:
             DataManager.add_record("grades.txt", grade)
         
-        print("✅ Sample grades created")
+        print(" Sample grades created")
     
     # Create sample fee records
-    print("\n💰 Creating sample fee records...")
+    print("\n Creating sample fee records...")
     fees = DataManager.read_data("fees.txt")
     if not fees:
         sample_fees = [
@@ -153,10 +153,10 @@ def setup_system():
         for fee in sample_fees:
             DataManager.add_record("fees.txt", fee)
         
-        print("✅ Sample fee records created")
+        print(" Sample fee records created")
     
     # Create sample attendance
-    print("\n📅 Creating sample attendance records...")
+    print("\n Creating sample attendance records...")
     attendance = DataManager.read_data("attendance.txt")
     if not attendance:
         from datetime import datetime, timedelta
@@ -181,28 +181,29 @@ def setup_system():
         for att in sample_attendance:
             DataManager.add_record("attendance.txt", att)
         
-        print("✅ Sample attendance records created")
+        print(" Sample attendance records created")
     
     print("\n" + "="*60)
-    print("✅ SYSTEM SETUP COMPLETE!")
+    print(" SYSTEM SETUP COMPLETE!")
     print("="*60)
     
-    print("\n📝 DEFAULT LOGIN CREDENTIALS:")
-    print("\n🔹 Staff/Admin:")
+    print("\n DEFAULT LOGIN CREDENTIALS:")
+    print("\n Staff/Admin:")
     print("   ID: STF001")
     print("   Password: admin123")
     
-    print("\n🔹 Teachers:")
+    print("\n Teachers:")
     print("   ID: TCH001, TCH002")
     print("   Password: teacher123")
     
-    print("\n🔹 Students:")
+    print("\n Students:")
     print("   ID: STU001, STU002, STU003")
     print("   Password: student123")
     
     print("\n" + "="*60)
-    print("💡 Run 'python main.py' to start the application")
+    print(" Run 'python main.py' to start the application")
     print("="*60 + "\n")
 
 if __name__ == "__main__":
+
     setup_system()
