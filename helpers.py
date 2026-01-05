@@ -12,7 +12,7 @@ def print_header(title: str):
 
 def print_menu(options: list):
     """Print numbered menu"""
-    print("\n📋 MENU:")
+    print("\n MENU:")
     for i, option in enumerate(options, 1):
         print(f" {i}. {option}")
 
@@ -32,3 +32,4 @@ def generate_id(prefix: str, existing_ids: list) -> str:
     
     next_num = max(existing_nums) + 1 if existing_nums else 1
     return f"{prefix}{next_num:03d}"
+
