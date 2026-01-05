@@ -119,7 +119,7 @@ class TeacherDashboard(BaseUser):
         
         students = self.dm.get_all_students()
         if student_id not in students:
-            input("\n❌ Student not found! Press Enter...")
+            input("\n Student not found! Press Enter...")
             return
         
         student = students[student_id]
@@ -151,3 +151,4 @@ class TeacherDashboard(BaseUser):
         print(f" Attendance: {student.get('attendance', {})}")
         
         input("\nPress Enter to continue...")
+
