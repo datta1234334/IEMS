@@ -28,14 +28,14 @@ def main():
             if choice == '1':
                 current_user = auth.login()
                 if current_user:
-                    input("\n✅ Login successful! Press Enter to continue...")
+                    input("\n Login successful! Press Enter to continue...")
                 else:
-                    input("\n❌ Invalid credentials! Press Enter to continue...")
+                    input("\n Invalid credentials! Press Enter to continue...")
             elif choice == '2':
-                print("\n👋 Thank you for using Student IEMS!")
+                print("\n Thank you for using Student IEMS!")
                 break
             else:
-                input("\n⚠️  Invalid option! Press Enter to continue...")
+                input("\n  Invalid option! Press Enter to continue...")
         else:
             # Route to appropriate dashboard based on role
             role = current_user.get('role', '').lower()
@@ -47,7 +47,7 @@ def main():
             elif role == 'staff':
                 dashboard = StaffDashboard(current_user)
             else:
-                input(f"\n⚠️  Unknown role: {role}! Press Enter to continue...")
+                input(f"\n  Unknown role: {role}! Press Enter to continue...")
                 current_user = None
                 continue
             
@@ -59,3 +59,4 @@ if __name__ == "__main__":
     # Ensure data directory exists
     os.makedirs('data', exist_ok=True)
     main()
+
